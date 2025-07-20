@@ -1,0 +1,26 @@
+components:
+  display: sh1107
+  fuel: obd
+
+settings:
+  sh1107:
+    bus: null       # Replace this with your I2C bus number (if set to null, the default bus will be used).
+    address: null   # Replace this with your device address (if set to null, 0x3C will be used).
+  obd:
+    connection:
+      # These are the settings used when connecting to the OBD-II adapter.
+      # Set the `connection` key to null to use the default settings.
+      # Not all settings must be specified at once - if a setting is not specified, its default value will be used.
+      # Check out https://python-obd.readthedocs.io/en/latest/Connections for the details on what these settings do.
+      portstr:
+      baudrate:
+      protocol:
+      fast:
+      timeout:
+      check_voltage:
+      start_low_power:
+
+    # The OBD connection only allows fetching the fuel level as a percentage of your whole fuel tank capacity.
+    # It won't, however, report the actual amount of fuel used in liters OR the total fuel tank capacity.
+    # Therefore, you need to specify your fuel tank capacity in liters manually to be able to calculate actual amounts.
+    fuel_tank_capacity: 50

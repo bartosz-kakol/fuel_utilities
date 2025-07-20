@@ -1,0 +1,10 @@
+venv/
+.venv/
+.idea/
+.vscode/
+__pycache__/
+
+config.yaml
+compiled.assets
+
+**/.DS_Store
